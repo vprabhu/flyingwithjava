@@ -1,32 +1,32 @@
-package hackersrank.thirtydaysofcode;
+package hackersrank.thirtydaysofcode
 
-import java.util.Scanner;
+import java.util.Scanner
 
 /**
  * Created by root on 10/5/17.
  */
-public class DayTwoOperators {
+object DayTwoOperators {
 
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        double mealCost = scan.nextDouble(); // original meal price
-        int tipPercent = scan.nextInt(); // tip percentage
-        int taxPercent = scan.nextInt(); // tax percentage
-        scan.close();
+    @JvmStatic fun main(args: Array<String>) {
+        val scan = Scanner(System.`in`)
+        val mealCost = scan.nextDouble() // original meal price
+        val tipPercent = scan.nextInt() // tip percentage
+        val taxPercent = scan.nextInt() // tax percentage
+        scan.close()
 
         // Write your calculation code here.
-        int mealCostInt = (int) Math.abs(mealCost);
+        val mealCostInt = Math.abs(mealCost).toInt()
         //calculating tip percent
-        double tipPercentCost = (((float) tipPercent/100)*mealCost);
+        val tipPercentCost = tipPercent.toFloat() / 100 * mealCost
         // calculating tax percent
-        double taxPercentCost = (((float) taxPercent/100)*mealCost);
+        val taxPercentCost = taxPercent.toFloat() / 100 * mealCost
 
-        double totalPrice = mealCost + tipPercentCost + taxPercentCost;
+        val totalPrice = mealCost + tipPercentCost + taxPercentCost
 
         // cast the result of the rounding operation to an int and save it as totalCost
-        int totalCost = (int) Math.round(totalPrice);
+        val totalCost = Math.round(totalPrice).toInt()
         // Print your result
-        System.out.println("The total meal cost is "+totalCost+" dollars.");
+        println("The total meal cost is $totalCost dollars.")
 
     }
 
